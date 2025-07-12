@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#include "crayon.h"
 #include "utility.h"
 #include "generics.h"
 
@@ -48,5 +53,21 @@ copy Bool is_c_whitespace(copy const char c) {
     ;
 }
 
+borrowed const char * s_localtime() {
+    borrowed static char buffer[100] = { 0 };
 
+    copy time_t now = time(nil);
+    borrowed struct tm * lt = localtime(&now);
+    if (!lt) {
+        fprintf(
+            stderr, 
+            RED BOLD "ERROR: " ENDCRAYON "failed to parse the local time."
+        );
+        exit( EXIT_FAILURE );
+    }
+
+    strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", lt);
+
+    return buffer;
+}
 
