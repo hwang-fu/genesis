@@ -1,0 +1,4 @@
+#ifndef GENESIS_GENERICS_H
+#define GENESIS_GENERICS_H
+
+#endif // GENESIS_GENERICS_H
