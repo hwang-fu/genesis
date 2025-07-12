@@ -1,0 +1,4 @@
+#ifndef GENESIS_ASSERTF_H
+#define GENESIS_ASSERTF_H
+
+#endif // GENESIS_ASSERTF_H
