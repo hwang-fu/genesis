@@ -134,6 +134,12 @@ typedef unsigned long   u64 ;
 #define zeros(n)                                                    \
         zeros_( n )
 
+#define pforward(ptr, n)                                            \
+        (ptr += (n))
+
+#define pbackward(ptr, n)                                           \
+        (ptr -= (n))
+
 
 // -------------------------------------------------------------
 // | comparison helpers |
