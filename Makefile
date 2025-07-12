@@ -13,6 +13,7 @@ BUILD 	:= ${ROOT}/build
 TARGET 	:= ${BIN}/genesis
 OBJS	:= ${BUILD}/main.o
 OBJS	+= ${BUILD}/lex.o
+OBJS	+= ${BUILD}/parse.o
 OBJS	+= ${BUILD}/token.o
 OBJS	+= ${BUILD}/vector.o
 OBJS	+= ${BUILD}/assertf.o
@@ -37,7 +38,7 @@ CFLAGS += -I${INC}
 # -------------------------------------
 LFLAGS := -WI,-e,main
 
-.PHONY: all clean redo
+.PHONY: all clean check redo
 
 all: ${TARGET}
 
@@ -52,6 +53,9 @@ ${BUILD}/%.o: ${SRC}/%.c
 clean:
 	@rm -rf ${BIN}/*
 	@rm -rf ${BUILD}/*
+
+check:
+	@make && make clean
 
 redo:
 	@make clean && make

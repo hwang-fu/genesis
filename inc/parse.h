@@ -1,0 +1,4 @@
+#ifndef GENESIS_PARSE_H
+#define GENESIS_PARSE_H
+
+#endif // GENESIS_PARSE_H
