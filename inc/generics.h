@@ -72,11 +72,18 @@ typedef unsigned long   u64 ;
  *      1. Frees the pointer if not null.
  *      2. Sets the pointer to null after freeing.
  */
-#define sfree(ptr)                                                      \
-        do {                                                            \
-            if ( (ptr) ) free( ptr );                                   \
-            ptr = nil;                                                  \
+#define sfree(ptr)                                                  \
+        do {                                                        \
+            if ( (ptr) ) free( ptr );                               \
+            ptr = nil;                                              \
         } while (0)
+
+/**
+ * scp(ptr):
+ *      1. Asserts that `ptr` is not null.
+ */
+#define scp(ptr)                                                    \
+        assertf(ptr != nil, "intolerable" BOLD " nil " ENDCRAYON "pointer at" ITALIC " %s()" ENDCRAYON, __FUNCTION__)
 
 
 // -------------------------------------------------------------
