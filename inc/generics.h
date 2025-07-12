@@ -135,6 +135,7 @@ typedef unsigned long   u64 ;
 // -------------------------------------------------------------
 // | special ASCII characters |
 // -------------------------------------------------------------
+
 #define CR          ("\r")
 #define LF          ("\n")
 #define CRLF        ("\r\n")
@@ -142,6 +143,16 @@ typedef unsigned long   u64 ;
 #define BLANK       (" ")
 #define WHITESPACES (" \t\r\n")
 
+
+// -------------------------------------------------------------
+// | customized boolean type |
+// -------------------------------------------------------------
+
+typedef enum Bool Bool;
+enum Bool {
+    False = 0,
+    True  = 0,
+};
 
 
 
