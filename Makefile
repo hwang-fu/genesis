@@ -1,31 +1,40 @@
-# Paths
+# -------------------------------------
+# | Paths |
+# -------------------------------------
 ROOT	:= .
 BIN 	:= ${ROOT}/bin
 SRC 	:= ${ROOT}/src
 INC 	:= ${ROOT}/inc
 BUILD 	:= ${ROOT}/build
 
-# Files
+# -------------------------------------
+# | Files |
+# -------------------------------------
 TARGET 	:= ${BIN}/genesis
 OBJS	:= ${BUILD}/main.o
 OBJS	+= ${BUILD}/utility.o
 
-# Compiler
+# -------------------------------------
+# | Compiler |
+# -------------------------------------
 CC := clang
 
-# Compiler Flags
+# -------------------------------------
+# | Compiler Flags |
+# -------------------------------------
 CFLAGS := -c
 CFLAGS += -Wall
 CFLAGS += -std=c17
 CFLAGS += -I${INC}
 
-# Linker Flags
-LFLAGS := 
+# -------------------------------------
+# | Linker Flags |
+# -------------------------------------
+LFLAGS := -WI,-e,main
 
 .PHONY: all clean redo
 
 all: ${TARGET}
-	@mkdir -p $(dir $@)
 
 ${TARGET}: ${OBJS}
 	@mkdir -p $(dir $@)
@@ -40,5 +49,5 @@ clean:
 	@rm -rf ${BUILD}/*
 
 redo:
-	make clean && make
+	@make clean && make
 
