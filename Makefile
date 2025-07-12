@@ -12,7 +12,9 @@ BUILD 	:= ${ROOT}/build
 # -------------------------------------
 TARGET 	:= ${BIN}/genesis
 OBJS	:= ${BUILD}/main.o
+OBJS	+= ${BUILD}/assertf.o
 OBJS	+= ${BUILD}/utility.o
+OBJS	+= ${BUILD}/generics.o
 
 # -------------------------------------
 # | Compiler |
