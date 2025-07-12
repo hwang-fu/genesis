@@ -14,7 +14,9 @@ owned Vector * vec_new();
 
 copy u64  vec_size(borrowed Vector * vec);
 copy u64  vec_capacity(borrowed Vector * vec);
+copy f64  vec_watermark(borrowed Vector * vec);
 copy Bool vec_is_empty(borrowed Vector * vec);
+copy Bool vec_resize(borrowed Vector * vec, copy u64 newcap);
 
 borrowed void * vec_front(borrowed Vector * vec);
 borrowed void * vec_back(borrowed Vector * vec);
