@@ -59,12 +59,23 @@ typedef unsigned long   u64 ;
 
 /**
  * drop(ptr):
- *   1. Frees the pointer if not null.
- *   2. Safe cleanup wrapper to avoid double-free or null-free.
+ *      1. Frees the pointer if not null.
+ *      2. Safe cleanup wrapper to avoid double-free or null-free.
  */
 #define drop(ptr)                                                   \
         do {                                                        \
             if ( (ptr) ) free(ptr);                                 \
+        } while (0)
+
+/**
+ * sfree(ptr):
+ *      1. Frees the pointer if not null.
+ *      2. Sets the pointer to null after freeing.
+ */
+#define sfree(ptr)                                                      \
+        do {                                                            \
+            if ( (ptr) ) free( ptr );                                   \
+            ptr = nil;                                                  \
         } while (0)
 
 
@@ -74,38 +85,54 @@ typedef unsigned long   u64 ;
 
 /**
  * deref(ptr, type):
- *   1. Dereference a pointer with the expected type.
+ *      1. Dereference a pointer with the expected type.
  */
 #define deref(ptr, type)                                            \
         (*((type *)(ptr)))
 
 /**
  * ref(ptr):
- *   1. Get the address of a variable (pass-by-reference helper).
+ *      1. Get the address of a variable (pass-by-reference helper).
  */
 #define ref(var)                                                    \
         (&var)
 
 /**
  * cast(obj, type):
- *   1. Explicitly cast object to type.
+ *      1. Explicitly cast object to type.
  */
 #define cast(obj, type)                                             \
         ((type) (obj))
 
 /**
  * pointer(type):
- *   1. Aliases pointer types in a readable way.
+ *      1. Aliases pointer types in a readable way.
  */
 #define pointer(type)                                               \
         (type*)
 
 /**
  * nullify(ptr):
- *  1. Sets the pointer to nil (zero).
+ *      1. Sets the pointer to nil (zero).
  */
 #define nullify(ptr)                                                \
         ptr = nil
+
+/**
+ * new(bytes):
+ *      1. Allocates `n` bytes from the heap.
+ *      2. Aborts the program if failed to allocate.
+ */
+#define new(n)                                                      \
+        new_( n )
+
+/**
+ * zeros(bytes):
+ *      1. Allocates `n` bytes from the heap and nullify them all.
+ *      2. Aborts the program if failed to allocate.
+ */
+#define zeros(n)                                                    \
+        zeros_( n )
 
 
 // -------------------------------------------------------------
@@ -125,8 +152,8 @@ typedef unsigned long   u64 ;
 
 /**
  * roundup(n, d):
- *   1. Rounds up `n` to the nearest multiple of `d`.
- *   2. Useful for alignment or chunked memory blocks.
+ *      1. Rounds up `n` to the nearest multiple of `d`.
+ *      2. Useful for alignment or chunked memory blocks.
  */
 #define roundup(n, d)                                               \
         (((n) + (d) - 1) / (d))
@@ -154,6 +181,13 @@ enum Bool {
     True  = 0,
 };
 
+
+// -------------------------------------------------------------
+// | memory allocation helpers |
+// -------------------------------------------------------------
+
+void * new_(u64 bytes);
+void * zeros_(u64 bytes);
 
 
 #endif // GENESIS_GENERICS_H
