@@ -1,0 +1,11 @@
+
+<underscore> ::= '_'
+<digit>      ::= '0' .. '9'
+<upper>      ::= 'A' .. 'Z'
+<lower>      ::= 'a' .. 'z'
+<letter>     ::= <upper> | <lower>
+<alpha>      ::= <letter> | <underscore>
+<alnum>      ::= <alpha> | <digit>
+
+<identifier> ::= <alpha> [<alnum>]*
+
