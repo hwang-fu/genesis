@@ -12,6 +12,7 @@ CC := clang
 # Compiler Flags
 CFLAGS := -c
 CFLAGS += -Wall
+CFLAGS += -std=c17
 CFLAGS += -I${INC}
 
 # Linker Flags
