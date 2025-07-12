@@ -8,4 +8,12 @@ copy Bool is_c_bdigit(copy const char c);
 copy Bool is_c_odigit(copy const char c);
 copy Bool is_c_xdigit(copy const char c);
 
+copy Bool is_c_upper(copy const char c);
+copy Bool is_c_lower(copy const char c);
+copy Bool is_c_letter(copy const char c);
+
+copy Bool is_c_alpha(copy const char c);
+copy Bool is_c_alnum(copy const char c);
+copy Bool is_c_whitespace(copy const char c);
+
 #endif // GENESIS_UTILITY_H
