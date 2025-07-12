@@ -55,6 +55,41 @@ copy Bool is_c_whitespace(copy const char c) {
     ;
 }
 
+copy Bool is_c_op(copy const char c) {
+    return eq('`', c)
+        || eq('~', c)
+        || eq('!', c)
+        || eq('@', c)
+        || eq('#', c)
+        || eq('$', c)
+        || eq('%', c)
+        || eq('^', c)
+        || eq('&', c)
+        || eq('*', c)
+        || eq('(', c)
+        || eq(')', c)
+        || eq('-', c)
+        || eq('=', c)
+        || eq('+', c)
+        || eq('[', c)
+        || eq(']', c)
+        || eq('{', c)
+        || eq('}', c)
+        || eq('\\', c)
+        || eq('|', c)
+        || eq(';', c)
+        || eq(':', c)
+        || eq('\'', c)
+        || eq('\"', c)
+        || eq(',', c)
+        || eq('<', c)
+        || eq('>', c)
+        || eq('.', c)
+        || eq('/', c)
+        || eq('?', c)
+    ;
+}
+
 borrowed const char * s_localtime() {
     borrowed static char buffer[100] = { 0 };
 
