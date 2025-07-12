@@ -132,6 +132,17 @@ typedef unsigned long   u64 ;
         (((n) + (d) - 1) / (d))
 
 
+// -------------------------------------------------------------
+// | special ASCII characters |
+// -------------------------------------------------------------
+#define CR          ("\r")
+#define LF          ("\n")
+#define CRLF        ("\r\n")
+#define TAB         ("\t")
+#define BLANK       (" ")
+#define WHITESPACES (" \t\r\n")
+
+
 
 
 #endif // GENESIS_GENERICS_H
