@@ -16,13 +16,13 @@ enum LogLevel {
         logging_(level, __FILE__, __LINE__, __VA_ARGS__)
 
 #define info(...)                                                       \
-        logger_(LOG_INFO, __FILE__, __LINE__, __VA_ARGS__)
+        logging_(LOG_INFO, __FILE__, __LINE__, __VA_ARGS__)
 
 #define warning(...)                                                    \
-        logger_(LOG_WARNING, __FILE__, __LINE__, __VA_ARGS__)
+        logging_(LOG_WARNING, __FILE__, __LINE__, __VA_ARGS__)
 
 #define error(...)                                                      \
-        logger_(LOG_ERROR, __FILE__, __LINE__, __VA_ARGS__)
+        logging_(LOG_ERROR, __FILE__, __LINE__, __VA_ARGS__)
 
 
 #define assertf(expr, ...)                                              \

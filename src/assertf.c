@@ -48,7 +48,9 @@ void logging_(copy LogLevel level, borrowed const char * filename, copy const in
             fprintf(logger, "@[%s]:[%d]\n", filename, line);
             va_list args;
             va_start(args, fmt);
+            fprintf(logger, "```\n");
             vfprintf(logger, fmt, args);
+            fprintf(logger, "\n```\n");
             va_end(args);
             fprintf(logger, LF);
             fprintf(logger, LF);
@@ -61,7 +63,9 @@ void logging_(copy LogLevel level, borrowed const char * filename, copy const in
             fprintf(logger, "@[%s]:[%d]\n", filename, line);
             va_list args;
             va_start(args, fmt);
+            fprintf(logger, "```\n");
             vfprintf(logger, fmt, args);
+            fprintf(logger, "\n```\n");
             va_end(args);
             fprintf(logger, LF);
             fprintf(logger, LF);
@@ -74,7 +78,9 @@ void logging_(copy LogLevel level, borrowed const char * filename, copy const in
             fprintf(logger, "@[%s]:[%d]\n", filename, line);
             va_list args;
             va_start(args, fmt);
+            fprintf(logger, "```\n");
             vfprintf(logger, fmt, args);
+            fprintf(logger, "\n```\n");
             va_end(args);
             fprintf(logger, LF);
             fprintf(logger, LF);
@@ -95,25 +101,24 @@ void errorf_(borrowed const char * filename, copy const int line, borrowed const
     );
     fprintf(
         stderr, 
-        UNDERLINE "\t%s\n" ENDCRAYON,
+        "\t" UNDERLINE "%s\n" ENDCRAYON,
         s_localtime()
     );
     fprintf(
         stderr, 
-        UNDERLINE "\t@[%s]:[%d]\n" ENDCRAYON,
+        "\t" UNDERLINE "@[%s]:[%d]\n" ENDCRAYON,
         filename, line
     );
 
-    fprintf(stderr, BOLD);
 
     va_list args;
     va_start(args, fmt);
     fprintf(stderr, TAB);
+    fprintf(stderr, BOLD);
     vfprintf(stderr, fmt, args);
+    fprintf(stderr, ENDCRAYON);
     fprintf(stderr, LF);
     va_end(args);
-
-    fprintf(stderr, ENDCRAYON);
 
     exit(EXIT_FAILURE);
 }
@@ -125,24 +130,24 @@ void debug_(borrowed const char * filename, copy const int line, borrowed const 
     );
     fprintf(
         stderr, 
-        UNDERLINE "\t%s\n" ENDCRAYON,
+        "\t" UNDERLINE "%s\n" ENDCRAYON,
         s_localtime()
     );
     fprintf(
         stderr, 
-        UNDERLINE "\t@[%s]:[%d]\n" ENDCRAYON,
+        "\t" UNDERLINE "@[%s]:[%d]\n" ENDCRAYON,
         filename, line
     );
 
-    fprintf(stderr, BOLD);
 
     va_list args;
     va_start(args, fmt);
     fprintf(stderr, TAB);
+    fprintf(stderr, BOLD);
     vfprintf(stderr, fmt, args);
+    fprintf(stderr, ENDCRAYON);
     fprintf(stderr, LF);
     va_end(args);
 
-    fprintf(stderr, ENDCRAYON);
 }
 
