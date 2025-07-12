@@ -56,4 +56,8 @@ dkms.conf
 
 # Customized files
 .clangd
+bin/*
+build/*
+*.txt
+
 
