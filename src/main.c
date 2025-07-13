@@ -2,13 +2,21 @@
 
 #include "assertf.h"
 
+void genesis_init();
+void genesis_init() {
+    logger_ctor();
+}
+
+void genesis_fin();
+void genesis_fin() {
+    logger_dtor();
+}
+
 int main(int argc, const char * argv[]) {
 
-    logger_ctor();
+    genesis_init();
 
-    warning("ABC");
-
-    logger_dtor();
+    genesis_fin();
 
     return 0;
 
