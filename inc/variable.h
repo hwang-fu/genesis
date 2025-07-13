@@ -1,0 +1,4 @@
+#ifndef GENESIS_VARIABLE_H
+#define GENESIS_VARIABLE_H
+
+#endif // GENESIS_VARIABLE_H

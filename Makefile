@@ -17,6 +17,7 @@ OBJS	+= ${BUILD}/parse.o
 OBJS	+= ${BUILD}/ast.o
 OBJS	+= ${BUILD}/type.o
 OBJS	+= ${BUILD}/token.o
+OBJS	+= ${BUILD}/variable.o
 OBJS	+= ${BUILD}/vector.o
 OBJS	+= ${BUILD}/hashmap.o
 OBJS	+= ${BUILD}/assertf.o
