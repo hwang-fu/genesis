@@ -14,6 +14,7 @@ TARGET 	:= ${BIN}/genesis
 OBJS	:= ${BUILD}/main.o
 OBJS	+= ${BUILD}/lex.o
 OBJS	+= ${BUILD}/parse.o
+OBJS	+= ${BUILD}/type.o
 OBJS	+= ${BUILD}/token.o
 OBJS	+= ${BUILD}/vector.o
 OBJS	+= ${BUILD}/assertf.o
