@@ -1,0 +1,4 @@
+#ifndef GENESIS_HASHMAP_H
+#define GENESIS_HASHMAP_H
+
+#endif // GENESIS_HASHMAP_H
