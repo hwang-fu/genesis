@@ -1,4 +1,89 @@
 #ifndef GENESIS_AST_H
 #define GENESIS_AST_H
 
+#include "generics.h"
+
+typedef enum TAST TAST;
+enum TAST {
+    AST_NOP,
+
+    AST_IF,
+    AST_FOR_INC,
+    AST_FOR_DEC,
+    AST_REPEAT,
+    AST_LOOP,
+    AST_WHILE,
+
+    AST_LABEL,
+    AST_GOTO,
+
+    AST_VARIABLE,
+
+    AST_LOGICAL_OR,
+    AST_LOGICAL_AND,
+    AST_LOGICAL_EQ,
+    AST_LOGICAL_NEQ,
+    AST_LOGICAL_NOT,
+
+    AST_BIT_OR,
+    AST_BIT_XOR,
+    AST_BIT_AND,
+    AST_BIT_TOGGLE,
+
+    AST_LT,
+    AST_LT_EQ,
+    AST_GT,
+    AST_GT_EQ,
+
+    AST_LEFT_SHIFT,
+    AST_RIGHT_SHIFT,
+
+    AST_INCREMENT,
+    AST_DECREMENT,
+    AST_MUL,
+    AST_DIV,
+    AST_MOD,
+    AST_NEGATION,
+
+    AST_REF,
+    AST_DEREF,
+    AST_INDEXING,
+
+    AST_LITERAL_INTEGER,
+    AST_LITERAL_FLOAT,
+    AST_LITERAL_CHAR,
+
+    AST_TYPE_CAST,
+
+    AST_STRUCT_FIELD_ACCESS,
+
+    // routine implementation
+    AST_PROCEDURE,
+    AST_FUNCTION,
+
+    // routine call.
+    AST_PROCEDURE_CALL,
+    AST_FUNCTION_CALL,
+
+    AST_RETURN,
+
+    AST_ASSIGNMENT,
+    AST_PLUS_ASSIGNMENT,
+    AST_MINUS_ASSIGNMENT,
+    AST_MUL_ASSIGNMENT,
+    AST_DIV_ASSIGNMENT,
+    AST_MOD_ASSIGNMENT,
+    AST_BIT_OR_ASSIGNMENT,
+    AST_BIT_XOR_ASSIGNMENT,
+    AST_BIT_AND_ASSIGNMENT,
+
+    AST_UNKNOWN,
+};
+
+typedef struct Ast Ast;
+struct Ast {
+};
+
+owned Ast * ast_new();
+
 #endif // GENESIS_AST_H
