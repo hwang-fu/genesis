@@ -50,11 +50,11 @@ all: ${TARGET}
 
 ${TARGET}: ${OBJS}
 	@mkdir -p $(dir $@)
-	${CC} ${LFLAGS} ${OBJS} -o $@
+	@${CC} ${LFLAGS} ${OBJS} -o $@
 
 ${BUILD}/%.o: ${SRC}/%.c
 	@mkdir -p $(dir $@)
-	${CC} ${CFLAGS} $< -o $@
+	@${CC} ${CFLAGS} $< -o $@
 
 clean:
 	@rm -rf ${BIN}/*

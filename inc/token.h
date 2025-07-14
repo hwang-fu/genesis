@@ -162,7 +162,18 @@ owned Token * tk_ctor(copy const TToken tt, borrowed const char * value);
 owned Token * tk_ctor_owned(copy const TToken tt, owned char * value);
 owned TKs   * tks_new();
 
+copy TToken tks_tt_own(borrowed TKs * tks);
+copy TToken tks_tt_borrow(borrowed TKs * tks);
+
+owned char * tks_value_own(borrowed TKs * tks);
+owned char * tks_value_borrow(borrowed TKs * tks);
+
+void tks_next_own(borrowed TKs * tks, borrowed TToken * tt, borrowed char ** value);
+void tks_next_borrow(borrowed TKs * tks, borrowed TToken * tt, borrowed char ** value);
+
 void tk_dtor(borrowed void * arg);
 void tk_destroy(owned void * arg);
+void tks_dtor(borrowed void * arg);
+void tks_destroy(owned void * arg);
 
 #endif // GENESIS_TOKEN_H

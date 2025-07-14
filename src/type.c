@@ -176,6 +176,7 @@ owned Type * ty_pointer(borrowed Type * base) {
 }
 
 copy u64 ty_size(borrowed Type * ty) {
+    TODO("%s is to be implemented.", __FUNCTION__);
 }
 
 void ty_dtor(borrowed void * arg) {
@@ -200,6 +201,23 @@ void ty_dtor(borrowed void * arg) {
         case TYPE_F64:
         {
         } break;
+
+        case TYPE_ALIAS:
+        case TYPE_PTR:
+        case TYPE_ARRAY:
+        case TYPE_TUPLE:
+        case TYPE_STR_LITERAL:
+        case TYPE_ENUMERATION:
+        case TYPE_STRUCTURE:
+        case TYPE_FUNCTION:
+        case TYPE_PROCEDURE:
+        {
+        } break;
+
+        case TYPE_UNKNOWN:
+        {
+            error("TYPE_UNKNOWN occured in %s", __FUNCTION__);
+        } break;;
     }
 }
 
