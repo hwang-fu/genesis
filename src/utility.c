@@ -483,3 +483,16 @@ copy u64 s_to_u64_owned(owned char * s) {
     return result;
 }
 
+owned char * s_from_u64(copy u64 n) {
+    if (eq(0, n)) {
+        return s_copy("0");
+    }
+    owned char * value = nil;
+    while (n > 0) {
+        copy char digit = '0' + (n % 10);
+        value = s_insert_c_front_owned(value, digit);
+        n /= 10;
+    }
+    return value;
+}
+

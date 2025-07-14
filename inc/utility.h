@@ -48,4 +48,6 @@ copy Bool is_s_float_owned(owned char * s);
 copy u64 s_to_u64(borrowed const char * s);
 copy u64 s_to_u64_owned(owned char * s);
 
+owned char * s_from_u64(copy u64 n);
+
 #endif // GENESIS_UTILITY_H
