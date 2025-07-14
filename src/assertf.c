@@ -12,7 +12,7 @@ owned           char * logfile = nil;
 
 borrowed static FILE * logger  = nil;
 
-void logger_ctor() {
+void logger_init() {
     if (logger) {
         return;
     }
@@ -26,7 +26,7 @@ void logger_ctor() {
     scp(logger);
 }
 
-void logger_dtor() {
+void logger_fin() {
     scp(logger);
     copy int ret = fclose(logger);
     if (logfile) {

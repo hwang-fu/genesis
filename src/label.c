@@ -9,12 +9,12 @@ owned static char * LPrefix = nil;
 copy  static u64    LCount  = 0;
 copy  static u64    Counter = 0;
 
-void label_ctor() {
+void label_init() {
     assert_eq(nil, LPrefix);
     LPrefix = s_copy("L.");
 }
 
-void label_dtor() {
+void label_fin() {
     sfree(LPrefix);
     LCount = 0;
 }

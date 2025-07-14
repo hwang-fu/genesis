@@ -66,12 +66,12 @@ enum LogLevel {
 /**
  * @brief Logger Constructor.
  */
-void logger_ctor();
+void logger_init();
 
 /**
  * @brief Logger Destructor.
  */
-void logger_dtor();
+void logger_fin();
 
 /**
  * @brief Internal function to log messages with formatting.

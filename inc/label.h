@@ -3,8 +3,8 @@
 
 #include "generics.h"
 
-void label_ctor();
-void label_dtor();
+void label_init();
+void label_fin();
 owned char * label_new();
 owned char * s_unique();
 
