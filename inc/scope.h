@@ -1,0 +1,4 @@
+#ifndef GENESIS_SCOPE_H
+#define GENESIS_SCOPE_H
+
+#endif // GENESIS_SCOPE_H

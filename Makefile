@@ -18,6 +18,7 @@ OBJS	+= ${BUILD}/ast.o
 OBJS	+= ${BUILD}/type.o
 OBJS	+= ${BUILD}/label.o
 OBJS	+= ${BUILD}/token.o
+OBJS	+= ${BUILD}/scope.o
 OBJS	+= ${BUILD}/variable.o
 OBJS	+= ${BUILD}/vector.o
 OBJS	+= ${BUILD}/hashmap.o
