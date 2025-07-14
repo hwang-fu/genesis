@@ -7,6 +7,7 @@
 
 owned static char * LPrefix = nil;
 copy  static u64    LCount  = 0;
+copy  static u64    Counter = 0;
 
 void label_ctor() {
     assert_eq(nil, LPrefix);
@@ -27,12 +28,17 @@ owned char * label_new() {
     else {
         LCount += 1;
     }
-    owned char * label = s_insert_end(LPrefix, suffix);
-    free(suffix);
-    return label;
+    return s_insert_front_owned(suffix, LPrefix);
 }
 
 owned char * s_unique() {
-    return label_new();
+    owned char * suffix = s_from_u64(Counter);
+    if (eq(0xffffffffffffffff, Counter)) {
+        Counter = 0;
+    }
+    else {
+        Counter += 1;
+    }
+    return s_insert_front_owned(suffix, "___ANONYMOUS");
 }
 
