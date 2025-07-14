@@ -16,6 +16,7 @@ OBJS	+= ${BUILD}/lex.o
 OBJS	+= ${BUILD}/parse.o
 OBJS	+= ${BUILD}/ast.o
 OBJS	+= ${BUILD}/type.o
+OBJS	+= ${BUILD}/label.o
 OBJS	+= ${BUILD}/token.o
 OBJS	+= ${BUILD}/variable.o
 OBJS	+= ${BUILD}/vector.o

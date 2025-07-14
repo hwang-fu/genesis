@@ -1,0 +1,4 @@
+#ifndef GENESIS_LABEL_H
+#define GENESIS_LABEL_H
+
+#endif // GENESIS_LABEL_H
